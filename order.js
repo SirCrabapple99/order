@@ -46,6 +46,12 @@ function check(key) {
     };
 };
 
+function check2() {
+        num = vars2.indexOf(event.target.id);
+        change(vars1[num], vars2[num]);
+};
+
 for (var i = 0; i < vars1.length; i++) {
     document.getElementById(vars2[i]).addEventListener("keydown", check)
+    document.getElementById(vars2[i]).addEventListener("focusout", check2)
 };
