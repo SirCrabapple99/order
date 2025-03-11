@@ -20,6 +20,8 @@ var mtl = 0;
 const vars1 = ['str', 'fort', 'agil', 'int', 'will', 'char', 'hw', 'mw', 'lw', 'flm', 'ice', 'ltn', 'gale', 'shdw', 'bld', 'mtl'];
 const vars2 = ['strinput', 'fortinput', 'agilinput', 'intinput', 'willinput', 'charinput', 'hwinput', 'mwinput', 'lwinput', 'flminput', 'iceinput', 'ltninput', 'galeinput', 'shdwinput', 'bldinput', 'mtlinput'];
 
+var orderlist = [];
+
 function change(p1, p2) {
     window[p1] = Math.max(0, Math.min(100, Math.floor(document.getElementById(p2).value)));
     if (!(Number.isNaN(window[p1]))) {
@@ -49,6 +51,22 @@ function check(key) {
 function check2() {
         num = vars2.indexOf(event.target.id);
         change(vars1[num], vars2[num]);
+};
+
+function order() {
+    change('str', 'strinput');
+    var ordertotal = 0;
+    var ordernum = 0
+    for (var i = 0; i <vars1.length; i++) {
+        if (window[vars1[i]] >= 1) {
+            orderlist[i] = vars1[i];
+            ordertotal += window[orderlist[i]];
+            ordernum += 1;
+        };
+    };
+    document.getElementById('ordert').innerHTML = ordertotal;
+    document.getElementById('ordera').innerHTML = Math.floor(ordertotal / ordernum);
+    document.getElementById('orderl').innerHTML = (ordernum * ((ordertotal / ordernum) - Math.floor(ordertotal / ordernum)));
 };
 
 for (var i = 0; i < vars1.length; i++) {
