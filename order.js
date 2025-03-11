@@ -51,6 +51,8 @@ function check2() {
         change(vars1[num], vars2[num]);
 };
 
+//horrible horrible worst way of going about this im sorry
+
 function order() {
     var orderlist = [];
     var orderlistfinal = [];
@@ -59,6 +61,7 @@ function order() {
     var orderfinal = 0;
     var ordernum = 0;
     var ordernumfinal = 0;
+//get total order thing
     for (var i = 0; i < vars1.length; i++) {
         if (window[vars1[i]] >= 1) {
             ordertotal += window[vars1[i]];
@@ -67,6 +70,7 @@ function order() {
             ordernumlist.push(vars1.indexOf(vars1[i]));
         };
     };
+//get and list all things
     for (var i = 0; i < ordernumlist.length; i++) {
         orderlistfinal.push(ordertotal / ordernum)
         if (orderlistfinal[i] <= orderlist[i] - 25) {
@@ -77,7 +81,7 @@ function order() {
             ordernumfinal++;
         };
     };
-
+//fix the ones that go down more than 25
     for (var i = 0; i < ordernumlist.length; i++) {
         orderlistfinal.push(ordertotal / ordernum)
         if (orderlistfinal[i] <= orderlist[i] - 25) {
@@ -85,7 +89,7 @@ function order() {
             orderlistfinal[i] = (orderfinal / ordernumfinal);
         };
     };
-
+//adjust final distribution amount and division amount accordingly
     for (var i = 0; i < ordernumlist.length; i++) {
         orderlistfinal.push(ordertotal / ordernum)
         if (orderlistfinal[i] < orderlist[i] - 25) {
@@ -95,7 +99,7 @@ function order() {
         } else {
         };
     };
-
+//distribute the final amount
     for (var i = 0; i < ordernumlist.length; i++) {
         orderlistfinal.push(ordertotal / ordernum)
         if (orderlistfinal[i] <= orderlist[i] - 25) {
@@ -103,7 +107,7 @@ function order() {
             orderlistfinal[i] = (orderfinal / ordernumfinal);
         };
     };
-
+//change the numbers accordingly
     for (var i = 0; i < ordernumlist.length; i++) {
         document.getElementById(vars2[ordernumlist[i]]).value = Math.floor(orderlistfinal[i]);
     };
