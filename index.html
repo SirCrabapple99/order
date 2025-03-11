@@ -68,6 +68,7 @@
     <title>Builder testing</title>
   </head>
   <body class="ubuntu-regular">
+    <!--main structure-->
     <table style="text-align: left;">
       <tr>
         <th>str:<div class="textspace"></div><input placeholder="0" maxlength="3" id="strinput"></th>
@@ -111,13 +112,26 @@
     </table>
 <br>
   <label style="text-align: left;">investment points remaining: <div id="invcount"></div></label>
-  <script src="order.js"></script>
   <br>
   <button onclick="order()" id="orderb">order</button>
-  <label>total order points: <div id='orderft'></div></label>
-  <br>
-  <label>average order points: <div id='orderfa'></div></label>
   <br>
   <label>spare points: <div id='orderfl'></div></label>
+  <br>
+  <button onclick="savepre()">save preshrine</button><br>
+  <br>
+  <button onclick="loadpre()">load preshrine</button><br>
+  <br>
+  <button onclick="savepost()">save postshrine</button><br>
+  <br>
+  <button onclick="loadpost()">load postshrine</button>
+<!--uh idk-->
+<br>
+<br>
+<div id="notif">hi</div>
+<!--below here is the script stuff-->
+
+  <script src="cosmetics.js"></script>
+  <script src="order.js"></script>
+  <script>load();</script>
 </body>
 </html>
