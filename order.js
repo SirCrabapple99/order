@@ -20,6 +20,9 @@ var mtl = 0;
 const vars1 = ['str', 'fort', 'agil', 'int', 'will', 'char', 'hw', 'mw', 'lw', 'flm', 'ice', 'ltn', 'gale', 'shdw', 'bld', 'mtl'];
 const vars2 = ['strinput', 'fortinput', 'agilinput', 'intinput', 'willinput', 'charinput', 'hwinput', 'mwinput', 'lwinput', 'flminput', 'iceinput', 'ltninput', 'galeinput', 'shdwinput', 'bldinput', 'mtlinput'];
 
+var pre = [];
+var post = [];
+
 function change(p1, p2) {
     window[p1] = Math.max(0, Math.min(100, Math.floor(document.getElementById(p2).value)));
     if (!(Number.isNaN(window[p1]))) {
@@ -126,4 +129,39 @@ function order() {
 for (var i = 0; i < vars1.length; i++) {
     document.getElementById(vars2[i]).addEventListener("keydown", check)
     document.getElementById(vars2[i]).addEventListener("focusout", check2)
+};
+
+function savepre() {
+    pre = [];
+    for (var i = 0; i < vars1.length; i++) {
+        pre.push(document.getElementById(vars2[i]).value);
+    };
+};
+
+function savepost() {
+    post = [];
+    for (var i = 0; i < vars1.length; i++) {
+        post.push(document.getElementById(vars2[i]).value);
+    };
+};
+
+function loadpre() {
+    for (var i = 0; i < vars1.length; i++) {
+        document.getElementById(vars2[i]).value = pre[i];
+    };
+};
+
+function loadpost() {
+    for (var i = 0; i < vars1.length; i++) {
+        document.getElementById(vars2[i]).value = post[i];
+    };
+};
+
+function load() {
+    for (var i = 0; i < vars1.length; i++) {
+        pre.push(0);
+        post.push(0);
+        change(vars1[i], vars2[i]);
+    }
+    sendnotif("setup finished!");
 };
