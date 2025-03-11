@@ -20,8 +20,6 @@ var mtl = 0;
 const vars1 = ['str', 'fort', 'agil', 'int', 'will', 'char', 'hw', 'mw', 'lw', 'flm', 'ice', 'ltn', 'gale', 'shdw', 'bld', 'mtl'];
 const vars2 = ['strinput', 'fortinput', 'agilinput', 'intinput', 'willinput', 'charinput', 'hwinput', 'mwinput', 'lwinput', 'flminput', 'iceinput', 'ltninput', 'galeinput', 'shdwinput', 'bldinput', 'mtlinput'];
 
-var orderlist = [];
-
 function change(p1, p2) {
     window[p1] = Math.max(0, Math.min(100, Math.floor(document.getElementById(p2).value)));
     if (!(Number.isNaN(window[p1]))) {
@@ -54,19 +52,39 @@ function check2() {
 };
 
 function order() {
-    change('str', 'strinput');
+    var orderlist = [];
+    var orderlistfinal = [];
+    var ordernumlist = [];
     var ordertotal = 0;
-    var ordernum = 0
-    for (var i = 0; i <vars1.length; i++) {
+    var orderfinal = 0;
+    var ordernum = 0;
+    for (var i = 0; i < vars1.length; i++) {
         if (window[vars1[i]] >= 1) {
-            orderlist[i] = vars1[i];
-            ordertotal += window[orderlist[i]];
+            ordertotal += window[vars1[i]];
             ordernum += 1;
+            orderlist.push(window[vars1[i]]);
+            ordernumlist.push(vars1.indexOf(vars1[i]));
         };
     };
-    document.getElementById('ordert').innerHTML = ordertotal;
-    document.getElementById('ordera').innerHTML = Math.floor(ordertotal / ordernum);
-    document.getElementById('orderl').innerHTML = (ordernum * ((ordertotal / ordernum) - Math.floor(ordertotal / ordernum)));
+    for (var i = 0; i < orderlist.length; i++) {
+        if (orderlist[i] - (orderlist[i] - (ordertotal / ordernum)) <= orderlist[i] - 25) {
+            orderfinal += (orderlist[i] - 25);
+            orderlistfinal.push(orderlist[i] - 25)
+        } else {
+            orderfinal += (ordertotal / ordernum);
+            orderlistfinal.push(ordertotal / ordernum);
+        };
+    };
+    for (var i = 0; i < ordernumlist.length; i++) {
+        change(vars1[ordernumlist[i]], vars2[ordernumlist[i]]);
+    };
+    
+    document.getElementById("ordera").innerHTML = Math.floor(ordertotal / ordernum);
+    document.getElementById("orderl").innerHTML = (ordernum * ((ordertotal / ordernum) - Math.floor(ordertotal / ordernum)));
+
+    document.getElementById("orderft").innerHTML = orderfinal;
+    document.getElementById("orderfa").innerHTML = Math.floor(orderfinal / ordernum);
+    document.getElementById("orderfl").innerHTML = (ordernum * ((orderfinal / ordernum) - Math.floor(orderfinal / ordernum)));
 };
 
 for (var i = 0; i < vars1.length; i++) {
