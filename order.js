@@ -107,9 +107,6 @@ function order() {
     for (var i = 0; i < ordernumlist.length; i++) {
         document.getElementById(vars2[ordernumlist[i]]).value = Math.floor(orderlistfinal[i]);
     };
-    
-    document.getElementById("ordera").innerHTML = Math.floor(ordertotal / ordernum);
-    document.getElementById("orderl").innerHTML = (ordernum * ((ordertotal / ordernum) - Math.floor(ordertotal / ordernum)));
 
     document.getElementById("orderft").innerHTML = orderfinal;
     document.getElementById("orderfa").innerHTML = Math.floor(orderfinal / ordernum);
