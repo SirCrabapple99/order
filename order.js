@@ -196,6 +196,7 @@ function importshrine() {
             post.push(parsed[i]);
         }
     }
+    setpre();
 };
 
 function setpre() {
