@@ -123,7 +123,10 @@ function order() {
     for (var i = 0; i < ordernumlist.length; i++) {
         document.getElementById(vars2[ordernumlist[i]]).value = Math.floor(orderlistfinal[i]);
     };
-
+//make sure investment points are right
+    for (var i = 0; i < vars1.length; i++) {
+        change (vars1[i], vars2[i]);
+    };
     document.getElementById("orderft").innerHTML = orderfinal;
     document.getElementById("orderfa").innerHTML = Math.floor(orderfinal / ordernum);
     document.getElementById("orderfl").innerHTML = (ordernum * ((orderfinal / ordernum) - Math.floor(orderfinal / ordernum)));
@@ -139,6 +142,7 @@ function savepre() {
     for (var i = 0; i < vars1.length; i++) {
         pre.push(document.getElementById(vars2[i]).value);
     };
+    setpre();
 };
 
 function savepost() {
@@ -152,21 +156,18 @@ function loadpre() {
     for (var i = 0; i < vars1.length; i++) {
         document.getElementById(vars2[i]).value = pre[i];
     };
+    for (var i = 0; i < vars1.length; i++) {
+        change (vars1[i], vars2[i]);
+    };
 };
 
 function loadpost() {
     for (var i = 0; i < vars1.length; i++) {
         document.getElementById(vars2[i]).value = post[i];
     };
-};
-
-function load() {
     for (var i = 0; i < vars1.length; i++) {
-        pre.push(0);
-        post.push(0);
-        change(vars1[i], vars2[i]);
-    }
-    sendnotif("setup finished!");
+        change (vars1[i], vars2[i]);
+    };
 };
 
 function exportshrine() {
@@ -192,4 +193,27 @@ function importshrine() {
             post.push(parsed[i]);
         }
     }
+};
+
+function setpre() {
+    for (var i = 0; i < (pre.length); i++) {
+        if (pre[i] === '') {
+            document.getElementById("pre" + i).innerHTML = '0';
+        } else {
+            document.getElementById("pre" + i).innerHTML = pre[i];
+        }
+    };
+};
+
+function load() {
+    for (var i = 0; i < vars1.length; i++) {
+        pre.push(0);
+        post.push(0);
+        change(vars1[i], vars2[i]);
+    };
+    setpre();
+    for (var i = 0; i < vars1.length; i++) {
+        change (vars1[i], vars2[i]);
+    };
+    sendnotif("setup finished!");
 };
