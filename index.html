@@ -16,6 +16,18 @@
         display: inline-block;
         padding-left: 10px;
       }
+      .textspacelarge {
+        display: inline-block;
+        padding-left: 50px;
+      }
+      .textspacexl {
+        display: inline-block;
+        padding-left: 100px;
+      }
+      .textspacexxl {
+        display: inline-block;
+        padding-left: 200px;
+      }
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -117,9 +129,9 @@
   <br>
   <label>spare points: <div id='orderfl'></div></label>
   <br>
-  <button onclick="savepre()">save preshrine</button><br>
+  <button onclick="savepre()">save preshrine</button><div class="textspacexl"></div><button onclick="importshrine()">import preshrine</button><br>
   <br>
-  <button onclick="loadpre()">load preshrine</button><br>
+  <button onclick="loadpre()">load preshrine</button><div class="textspacexl"></div><button onclick="exportshrine()">export preshrine</button><br>
   <br>
   <button onclick="savepost()">save postshrine</button><br>
   <br>
