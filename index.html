@@ -9,6 +9,12 @@
         width: 30px;
         display: inline-block;
       }
+      .show {
+        display: block;
+      }
+      .hide {
+        display: none;
+      }
       th {
        padding-right: 100px;
       }
@@ -35,6 +41,15 @@
       .textspacexxl {
         display: inline-block;
         padding-left: 200px;
+      }
+      .talentbox {
+        margin-top: 2%;
+        margin-left: 12%;
+        height: 80%; 
+        width: 30%;
+        border: 3px solid #ccc;
+        overflow: auto;
+        display: inline-block;
       }
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;
@@ -88,6 +103,10 @@
     <title>Builder testing</title>
   </head>
   <body class="ubuntu-regular">
+    <button id="statbutton" onclick="show('stats')">stats</button>
+    <button id="talentbutton" onclick="show('talents')">talents</button>
+    
+    <div id="stats" class="show tab">
     <!--main structure-->
     <table style="text-align: right;">
       <tr>
@@ -148,8 +167,13 @@
 <br>
 <br>
 <div id="notif">hi</div>
+  </div>
+  <div id="talents" class="hide tab">
+    <div id="talentbox1" class="talentbox"></div>
+    <div id="talentbox2" class="talentbox"></div>
+  </div>
 <!--below here is the script stuff-->
-
+  <script src="talents.js"></script>
   <script src="cosmetics.js"></script>
   <script src="order.js"></script>
   <script>load();</script>
