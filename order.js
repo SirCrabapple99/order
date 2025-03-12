@@ -220,8 +220,8 @@ function load() {
     };
     //worlds most inefficient way of updating the button
     if (localStorage.getItem("savepreshrineonorder") == 0 || localStorage.getItem("savepreshrineonorder") == 1) {
-        savesetting()
-        savesetting()
+        savesetting();
+        savesetting();
     } else {
         localStorage.setItem("savepreshrineonorder", 0) 
         document.getElementById("savesetting").innerHTML = "autosave on shrine: disabled"
