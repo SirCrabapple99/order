@@ -60,6 +60,9 @@ function check2() {
 //horrible horrible worst way of going about this im sorry
 
 function order() {
+    if (saveonorder == 1) {
+        savepre();
+    };
     var orderlist = [];
     var orderlistfinal = [];
     var ordernumlist = [];
@@ -215,5 +218,26 @@ function load() {
     for (var i = 0; i < vars1.length; i++) {
         change (vars1[i], vars2[i]);
     };
+    //worlds most inefficient way of updating the button
+    if (localStorage.getItem("savepreshrineonorder") == 0 || localStorage.getItem("savepreshrineonorder") == 1) {
+        if (localStorage.getItem("savepreshrineonorder") == 0) {
+            document.getElementById("savesetting").innerHTML = "autosave on shrine: enabled"
+        } else {
+            document.getElementById("savesetting").innerHTML = "autosave on shrine: disabled"
+        };
+    } else {
+        localStorage.setItem("savepreshrineonorder", 0) 
+        document.getElementById("savesetting").innerHTML = "autosave on shrine: disabled"
+    };
     sendnotif("setup finished!");
 };
+
+function savesetting() {
+        if (localStorage.getItem("savepreshrineonorder") == 0) {
+            localStorage.setItem("savepreshrineonorder", 1);
+            document.getElementById("savesetting").innerHTML = "autosave on shrine: enabled"
+        } else {
+            localStorage.setItem("savepreshrineonorder", 0);
+            document.getElementById("savesetting").innerHTML = "autosave on shrine: disabled"
+        };
+    };
