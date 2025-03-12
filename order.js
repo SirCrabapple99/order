@@ -181,14 +181,14 @@ function exportshrine() {
     for (var i = 0; i < vars1.length; i++) {
         exportdata.push(post[i]);
      }
-    navigator.clipboard.writeText(JSON.stringify(exportdata));
+    navigator.clipboard.writeText(btoa(JSON.stringify(exportdata)));
 };
 
 function importshrine() {
     pre = [];
     post = [];
     importdata = window.prompt("data");
-    var parsed = JSON.parse(importdata);
+    var parsed = JSON.parse(atob(importdata));
     for (var i = 0; i < (34); i++) {
         if (i < vars1.length) {
             pre.push(parsed[i]);
