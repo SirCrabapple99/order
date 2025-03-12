@@ -23,6 +23,9 @@ const vars2 = ['strinput', 'fortinput', 'agilinput', 'intinput', 'willinput', 'c
 var pre = [];
 var post = [];
 
+var importdata = [];
+var exportdata = [];
+
 function change(p1, p2) {
     window[p1] = Math.max(0, Math.min(100, Math.floor(document.getElementById(p2).value)));
     if (!(Number.isNaN(window[p1]))) {
@@ -164,4 +167,29 @@ function load() {
         change(vars1[i], vars2[i]);
     }
     sendnotif("setup finished!");
+};
+
+function exportshrine() {
+    exportdata = [];
+    for (var i = 0; i < vars1.length; i++) {
+       exportdata.push(pre[i]);
+    }
+    for (var i = 0; i < vars1.length; i++) {
+        exportdata.push(post[i]);
+     }
+    navigator.clipboard.writeText(JSON.stringify(exportdata));
+};
+
+function importshrine() {
+    pre = [];
+    post = [];
+    importdata = window.prompt("data");
+    var parsed = JSON.parse(importdata);
+    for (var i = 0; i < (34); i++) {
+        if (i < vars1.length) {
+            pre.push(parsed[i]);
+        } else {
+            post.push(parsed[i]);
+        }
+    }
 };
