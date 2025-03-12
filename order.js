@@ -60,7 +60,7 @@ function check2() {
 //horrible horrible worst way of going about this im sorry
 
 function order() {
-    if (saveonorder == 1) {
+    if (localStorage.getItem("savepreshrineonorder") == 1) {
         savepre();
     };
     var orderlist = [];
