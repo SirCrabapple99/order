@@ -5,9 +5,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <style>
+      body {
+        background-color: #DCDCD8;
+        font-size: 2vh;
+      }
       input {
-        width: 30px;
+        width: 3.75vh;
+        font-size: 2vh;
         display: inline-block;
+        background-color: #CCCCC7;
+        border: 0;
+        outline: 0;      
+      }
+      input:hover {
+        background-color: #C7C7CC; 
+      }
+      th {
+        font-size: 2vh;
+        text-align: right;
+        margin-left: 0.5vh;
       }
       .show {
         display: block;
@@ -19,28 +35,29 @@
        padding-right: 100px;
       }
       .pre {
-        color: gray;
-        font-size: small;
+        color: #AFAFA6;
+        font-size: 1.6vh;
+        margin-left: 2vh;
       }
       .textspacesmall {
         display: inline-block;
-        padding-left: 5px;
+        padding-left: 0.5vh;
       }
       .textspace {
         display: inline-block;
-        padding-left: 10px;
+        padding-left: 2vh;
       }
       .textspacelarge {
         display: inline-block;
-        padding-left: 50px;
+        padding-left: 5vh;
       }
       .textspacexl {
         display: inline-block;
-        padding-left: 100px;
+        padding-left: 10vh;
       }
       .textspacexxl {
         display: inline-block;
-        padding-left: 200px;
+        padding-left: 20vh;
       }
       .talentbox {
         margin-top: 2%;
@@ -50,6 +67,20 @@
         border: 3px solid #ccc;
         overflow: auto;
         display: inline-block;
+      }
+      button {
+        font-size: 2vh;
+        display: inline-block;
+        background-color: #CCCCC7;
+        border: 0;
+        outline: 0; 
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      button:hover {
+        background-color: #E2E2DF;
+        color: #38383D;
       }
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;
@@ -63,7 +94,7 @@
   font-style: normal;
 }
 
-.ubuntu-medium {
+.ubuntu-regular {
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -87,7 +118,7 @@
   font-style: italic;
 }
 
-.ubuntu-medium-italic {
+.ubuntu-regular-italic {
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   font-style: italic;
@@ -108,48 +139,49 @@
     
     <div id="stats" class="show tab">
     <!--main structure-->
-    <table style="text-align: right;">
+    <table class="statstable" style="text-align: left;">
       <tr>
-        <th>str:<div class="textspace"></div><span id="pre0" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="strinput"></th>
-        <th>flame:<div class="textspace"></div><span id="pre9" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="flminput"></th>
+        <th>str:<span id="pre0" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="strinput"></th>
+        <th>flame:<span id="pre9" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="flminput"></th>
       </tr>
       <tr>
-        <th>fort:<div class="textspace"></div><span id="pre1" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="fortinput"></th>
-        <th>frost:<div class="textspace"></div><span id="pre10" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="iceinput"></th>
+        <th>fort:<span id="pre1" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="fortinput"></th>
+        <th>frost:<span id="pre10" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="iceinput"></th>
       </tr>
       <tr>
-        <th>agil:<div class="textspace"></div><span id="pre2" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="agilinput"></th>
-        <th>lightning:<div class="textspace"></div><span id="pre11" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="ltninput"></th>
+        <th>agil:<span id="pre2" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="agilinput"></th>
+        <th>lightning:<span id="pre11" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="ltninput"></th>
       </tr>
       <tr>
-        <th>int:<div class="textspace"></div><span id="pre3" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="intinput"></th>
-        <th>gale:<div class="textspace"></div><span id="pre12" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="galeinput"></th>
+        <th>int:<span id="pre3" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="intinput"></th>
+        <th>gale:<span id="pre12" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="galeinput"></th>
       </tr>
       <tr>
-        <th>will:<div class="textspace"></div><span id="pre4" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="willinput"></th>
-        <th>shadow:<div class="textspace"></div><span id="pre13" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="shdwinput"></th>
+        <th>will:<span id="pre4" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="willinput"></th>
+        <th>shadow:<span id="pre13" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="shdwinput"></th>
       </tr>
       <tr>
-        <th>char:<div class="textspace"></div><span id="pre5" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="charinput"></th>
-        <th>blood:<div class="textspace"></div><span id="pre14" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="bldinput"></th>
+        <th>char:<span id="pre5" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="charinput"></th>
+        <th>metal:<span id="pre14" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="mtlinput"></th>
       </tr>
       <tr>
         <th></th>
-        <th>iron:<div class="textspace"></div><span id="pre15" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="mtlinput"></th>
+        <th>blood:<span id="pre15" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="bldinput"></th>
       </tr>
     </table>
     <table style="text-align: right;">
       <tr>
-        <th>hvy:<div class="textspace"></div><span id="pre6" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="hwinput"></th>
+        <th>hvy:<span id="pre6" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="hwinput"></th>
       </tr>
       <tr>
-        <th>med:<div class="textspace"></div><span id="pre7" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="mwinput"></th>
+        <th>med:<span id="pre7" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="mwinput"></th>
       </tr>
       <tr>
-        <th>light:<div class="textspace"></div><span id="pre8" class="ubuntu-medium pre">0</span><div class="textspacesmall"></div><input placeholder="0" maxlength="3" id="lwinput"></th>
+        <th>light:<span id="pre8" class="ubuntu-regular pre">0</span><div class="textspacesmall"></div><input class="ubuntu-regular" placeholder="0" maxlength="3" id="lwinput"></th>
       </tr>
     </table>
 <br>
+<div id="buttons">
   <label style="text-align: left;">investment points remaining: <div id="invcount"></div></label>
   <br>
   <button onclick="order()" id="orderb">order</button>
@@ -163,6 +195,7 @@
   <button onclick="savepost()">save postshrine</button><div class="textspacexl"></div><button id="savesetting" onclick="savesetting()"></button><br>
   <br>
   <button onclick="loadpost()">load postshrine</button>
+</div>
 <!--uh idk-->
 <br>
 <br>
@@ -173,9 +206,9 @@
     <div id="talentbox2" class="talentbox"></div>
   </div>
 <!--below here is the script stuff-->
-  <script src="talents.js"></script>
   <script src="cosmetics.js"></script>
   <script src="order.js"></script>
+  <script src="talents.js"></script>
   <script>load();</script>
 </body>
 </html>
