@@ -17,8 +17,8 @@ var shdw = 0;
 var bld = 0;
 var mtl = 0;
 
-const vars1 = ['str', 'fort', 'agil', 'int', 'will', 'char', 'hw', 'mw', 'lw', 'flm', 'ice', 'ltn', 'gale', 'shdw', 'bld', 'mtl'];
-const vars2 = ['strinput', 'fortinput', 'agilinput', 'intinput', 'willinput', 'charinput', 'hwinput', 'mwinput', 'lwinput', 'flminput', 'iceinput', 'ltninput', 'galeinput', 'shdwinput', 'bldinput', 'mtlinput'];
+const vars1 = ['str', 'fort', 'agil', 'int', 'will', 'char', 'hw', 'mw', 'lw', 'flm', 'ice', 'ltn', 'gale', 'shdw', 'mtl', 'bld'];
+const vars2 = ['strinput', 'fortinput', 'agilinput', 'intinput', 'willinput', 'charinput', 'hwinput', 'mwinput', 'lwinput', 'flminput', 'iceinput', 'ltninput', 'galeinput', 'shdwinput', 'mtlinput', 'bldinput'];
 
 var pre = [];
 var post = [];
