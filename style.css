@@ -1,0 +1,145 @@
+      .Rare {
+        color: #c13f3f;
+      } 
+      .Advanced {
+        color: #3a8276;
+      }
+      .Equipment {
+        color: #942ece;
+      }
+      .Outfit {
+        color: #7131d9;
+      }
+      .Quest {
+        color: #CE8F2E;
+      }
+
+/* i  dont even want to think about this stuff*/        
+        body {
+        background-color: #DCDCD8;
+        font-size: 2vh;
+      }
+      input {
+        width: 3.75vh;
+        font-size: 2vh;
+        display: inline-block;
+        background-color: #CCCCC7;
+        border: 0;
+        outline: 0;      
+      }
+      input:hover {
+        background-color: #C7C7CC; 
+      }
+      th {
+        font-size: 2vh;
+        text-align: right;
+        margin-left: 0.5vh;
+      }
+      .show {
+        display: block;
+      }
+      .hide {
+        display: none;
+      }
+      th {
+       padding-right: 100px;
+      }
+      .pre {
+        color: #AFAFA6;
+        font-size: 1.6vh;
+        margin-left: 2vh;
+      }
+      .textspacesmall {
+        display: inline-block;
+        padding-left: 0.5vh;
+      }
+      .textspace {
+        display: inline-block;
+        padding-left: 2vh;
+      }
+      .textspacelarge {
+        display: inline-block;
+        padding-left: 5vh;
+      }
+      .textspacexl {
+        display: inline-block;
+        padding-left: 10vh;
+      }
+      .textspacexxl {
+        display: inline-block;
+        padding-left: 20vh;
+      }
+      .talentbox {
+        margin-top: 2%;
+        margin-left: 12%;
+        height: 80%; 
+        width: 30%;
+        border: 3px solid #ccc;
+        overflow: auto;
+        display: inline-block;
+      }
+      button {
+        font-size: 2vh;
+        display: inline-block;
+        background-color: #CCCCC7;
+        border: 0;
+        outline: 0; 
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      button:hover {
+        background-color: #E2E2DF;
+        color: #38383D;
+      }
+
+
+      
+/*rest from here is just font stuff*/      
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
