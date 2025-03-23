@@ -1,3 +1,6 @@
+      .Common {
+        color: #5b584f;
+      }
       .Rare {
         color: #c13f3f;
       } 
@@ -12,6 +15,12 @@
       }
       .Quest {
         color: #CE8F2E;
+      }
+      .Oath {
+        color: rgb(5, 5, 148);
+      }
+      .Origin {
+        color: rgb(10, 143, 10);
       }
 
 /* i  dont even want to think about this stuff*/        
