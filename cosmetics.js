@@ -14,4 +14,5 @@ function show(tab) {
     x[i].style.display = "none";
   }
     document.getElementById(tab).style.display = "block";
+    checktalents();
 };
