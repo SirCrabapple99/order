@@ -26,6 +26,9 @@ var post = [];
 var importdata = [];
 var exportdata = [];
 
+let talentsbox1 = [];
+let talentsbox2 = [];
+
 //oh no
 //regex for most things: https://regex101.com/r/LnKAiC/1
 //regex for requirements (base is wrong but I forgot how I fixed it, wep and magic is right tho): https://regex101.com/r/VyT8yP/2
@@ -223,28 +226,6 @@ function setpre() {
     };
 };
 
-function load() {
-    for (var i = 0; i < vars1.length; i++) {
-        pre.push(0);
-        post.push(0);
-        change(vars1[i], vars2[i]);
-    };
-    setpre();
-    for (var i = 0; i < vars1.length; i++) {
-        change (vars1[i], vars2[i]);
-    };
-    //worlds most inefficient way of updating the button
-    if (localStorage.getItem("savepreshrineonorder") == 0 || localStorage.getItem("savepreshrineonorder") == 1) {
-        savesetting();
-        savesetting();
-    } else {
-        localStorage.setItem("savepreshrineonorder", 0) 
-        document.getElementById("savesetting").innerHTML = "autosave on shrine: disabled"
-    };
-    checktalents();
-    sendnotif("setup finished!");
-};
-
 function savesetting() {
         if (localStorage.getItem("savepreshrineonorder") == 0) {
             localStorage.setItem("savepreshrineonorder", 1);
@@ -267,31 +248,76 @@ function savesetting() {
     
     function sendtalents(i, x) {
         let hi = document.createElement("div");
-        let hi2 = document.createTextNode(talentnames[i] + ': ');
+        let hi2 = document.createTextNode(talentnames[i]);
         let hi3 = document.createTextNode(talentdesc[i] + ' (' + categorylist[i] + ')');
+        let hidesc = document.createElement('p');
         let w = document.createElement("br");
         let w2 = document.createElement("br");
-        let w3 = document.createElement("br");
+        hidesc.appendChild(hi3);
+        hidesc.style = "display: none";
+        w2.style = "display: none";
         hi.appendChild(hi2);
         hi.appendChild(w);
-        hi.appendChild(hi3);
+        hi.appendChild(hidesc);
         hi.appendChild(w2);
-        hi.appendChild(w3);
+        hi.id = talentnames[i];
         hi.classList = raritys[i];
+        hi.addEventListener("click", switchtalents(i));
         if (x === 1) {
-        superhi.appendChild(hi);
-        document.getElementById("talentbox1").appendChild(superhi);
-        } else {
-            superhi.innerHTML = '';
+            if (talentsbox1[i] == 1) {
+             document.getElementById("talentbox1").appendChild(hi);
+         } else if (talentsbox2[i] == 1) {
+            document.getElementById("talentbox2").appendChild(hi);
+        }} else {
             document.getElementById("talentbox1").innerHTML = '';
-        };
+            document.getElementById("talentbox2").innerHTML = '';
+        }
     };
 
     function checktalents() {
         sendtalents(0, 0);
         for (var i = 0; i < talentdesc.length; i++) {
             if (basestats[i * 6] <= window[vars1[0]] && basestats[i * 6 + 1] <= window[vars1[1]] && basestats[i * 6 + 2] <= window[vars1[2]] && basestats[i * 6 + 3] <= window[vars1[3]] && basestats[i * 6 + 4] <= window[vars1[4]] && basestats[i * 6 + 5] <= window[vars1[5]] && wepstats[i * 3] <= window[vars1[6]] && wepstats[i * 3 + 1] <= window[vars1[7]] && wepstats[i * 3 + 2] <= window[vars1[8]] && attstats[i * 7] <= window[vars1[9]] && attstats[i * 7 + 1] <= window[vars1[10]] && attstats[i * 7 + 2] <= window[vars1[11]] && attstats[i * 7 + 3] <= window[vars1[12]] && attstats[i * 7 + 4] <= window[vars1[13]] && attstats[i * 7 + 5] <= window[vars1[14]] && attstats[i * 7 + 6] <= window[vars1[15]]) {
+                talentsbox1[i] = 1;
                 sendtalents(i, 1);
+            } else {
+                talentsbox1[i] = 0;
             };
         };
+    };
+
+    function switchtalents(i) {
+        if (talentsbox1[i]) {
+
+        }
+    };
+
+    function talentsetup() {
+        for (var i = 0; i < talentnames.length; i++) {
+            talentsbox1.push(0);
+            talentsbox2.push(0);
+        };
+        checktalents();
+    };
+
+    function load() {
+        for (var i = 0; i < vars1.length; i++) {
+            pre.push(0);
+            post.push(0);
+            change(vars1[i], vars2[i]);
+        };
+        setpre();
+        for (var i = 0; i < vars1.length; i++) {
+            change (vars1[i], vars2[i]);
+        };
+        //worlds most inefficient way of updating the button
+        if (localStorage.getItem("savepreshrineonorder") == 0 || localStorage.getItem("savepreshrineonorder") == 1) {
+            savesetting();
+            savesetting();
+        } else {
+            localStorage.setItem("savepreshrineonorder", 0) 
+            document.getElementById("savesetting").innerHTML = "autosave on shrine: disabled"
+        };
+        talentsetup();
+        sendnotif("setup finished!");
     };
