@@ -307,23 +307,27 @@ const name4 = document.getElementsByClassName("Origin");
         let hi = document.createElement("div");
         let hi2 = document.createTextNode(talentnames[i]);
         let hi3 = document.createTextNode(talentdesc[i] + ' (' + categorylist[i] + ')');
+        let hi4 = document.createElement('span');
         let hidesc = document.createElement('p');
         let w = document.createElement("br");
         let w2 = document.createElement("br");
         hidesc.appendChild(hi3);
         hidesc.style = "display: none";
         w2.style = "display: none";
+        hi.appendChild(hi4);
         hi.appendChild(hi2);
         hi.appendChild(w);
         hi.appendChild(hidesc);
         hi.appendChild(w2);
         hi.id = talentnames[i];
         hi.classList = raritys[i];
+        hi.style = "margin-left: 0.5vh; margin-top: 0.5vh;";
+        hi4.classList = "preshrinemarker";
         if (preshrineavaiable[i] == 1) {
-            hi.style = "filter: brightness(125%)"
+            hi4.style = "display: inline-block"
         } else {
-            hi.style = "filter: brightness(100%)"
-        }
+            hi4.style = "display: none"
+        };
         hi.addEventListener("click", function() {if (talentsbox2[i] == 1) {
             document.getElementById(talentnames[i]).innerHTML = '';
            /* alert(i);
