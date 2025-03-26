@@ -62,15 +62,13 @@
   <br>
   <label>spare points: <div id='orderfl'></div></label>
   <br>
-  <button onclick="savepre()">save preshrine</button><div class="textspacexl"></div><button onclick="importshrine()">import build</button><br>
+  <button onclick="savepre()">save preshrine</button><div class="textspacexl"></div><button onclick="importshrine(window.prompt('data'), 0)">import build</button><br>
   <br>
-  <button onclick="loadpre()">load preshrine</button><div class="textspacexl"></div><button onclick="exportshrine()">export build</button><br>
+  <button onclick="loadpre()">load preshrine</button><div class="textspacexl"></div><button onclick="exportshrine(0)">export build</button><br>
   <br>
-  <button onclick="savepost()">save postshrine</button><div class="textspacexl"></div><button id="savesetting" onclick="savesetting()"></button><br>
+  <button onclick="savepost()">save postshrine</button><div class="textspacexl"></div><button onclick="exportshrine(1)">export build to url</button><br>
   <br>
-  <button onclick="loadpost()">load postshrine</button>
-
-  <button onclick="testtalents()">test button</button>
+  <button onclick="loadpost()">load postshrine</button><div class="textspacexl"></div><button id="savesetting" onclick="savesetting()"></button><br>
 </div>
 <!--uh idk-->
 <br>
