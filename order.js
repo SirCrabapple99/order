@@ -194,18 +194,25 @@ function loadpost() {
 
 function exportshrine() {
     exportdata = [];
+    
     for (var i = 0; i < vars1.length; i++) {
        exportdata.push(pre[i]);
     }
     for (var i = 0; i < vars1.length; i++) {
         exportdata.push(post[i]);
-     }
+    }
+    for (var i = 0; i < talentsbox2.length; i++) {
+        if (talentsbox2[i] == 1){
+            exportdata.push(i)
+        };
+    };
     navigator.clipboard.writeText(btoa(JSON.stringify(exportdata)));
 };
 
 function importshrine() {
     pre = [];
     post = [];
+    talentsbox2 = [];
     importdata = window.prompt("data");
     var parsed = JSON.parse(atob(importdata));
     for (var i = 0; i < (34); i++) {
@@ -215,7 +222,13 @@ function importshrine() {
             post.push(parsed[i]);
         }
     }
+    for (var i = 33; i <= parsed.length; i++) {
+        talentsbox2[parsed[i - 1]] = 1;
+        sendtalents(parsed[i - 1], 1);
+        };
     setpre();
+    loadpost();
+    checktalents();
 };
 
 function setpre() {
@@ -305,11 +318,17 @@ const name4 = document.getElementsByClassName("Origin");
         hi.classList = raritys[i];
         hi.addEventListener("click", function() {if (talentsbox2[i] == 1) {
             document.getElementById(talentnames[i]).innerHTML = '';
+           /* alert(i);
+            alert(talentnames[i]);
+            alert(talentnames.indexOf(talentnames[i])); */
             talentsbox2[i] = 0;
             sendtalents(i, 1);
         } else {
             document.getElementById("talentbox2").appendChild(hi);
             talentsbox2[i] = 1;
+           /* alert(i);
+            alert(talentnames[i]);
+            alert(talentnames.indexOf(talentnames[i])); */
         };});
         if (x === 1) {
             document.getElementById("talentbox1").appendChild(hi);
