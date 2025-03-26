@@ -22,6 +22,12 @@
       .Origin {
         color: rgb(10, 143, 10);
       }
+      .Murmur {
+        color: rgb(230, 10, 230);
+      }
+      .Unique {
+        color: gold;
+      }
       .preshrinemarker {
         border-radius: 50%;
         background-color: yellow;
