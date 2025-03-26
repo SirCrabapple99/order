@@ -22,6 +22,14 @@
       .Origin {
         color: rgb(10, 143, 10);
       }
+      .preshrinemarker {
+        border-radius: 50%;
+        background-color: yellow;
+        width: 1.5vh;
+        height: 1.5vh;
+        margin-right: 0.5vh;
+        margin-left: 0.25vh;
+      }
 
 /* i  dont even want to think about this stuff*/        
         body {
@@ -37,7 +45,7 @@
         outline: 0;      
       }
       input:hover {
-        background-color: #C7C7CC; 
+        background-color: #bebfc0; 
       }
       th {
         font-size: 2vh;
